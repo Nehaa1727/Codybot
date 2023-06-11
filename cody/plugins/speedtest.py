@@ -32,7 +32,7 @@ async def speedtest(event):
     if download_speed != None and upload_speed != None:      response_message = f"**Download speed:** {download_speed}\n**Upload speed:** {upload_speed}"
     #Speed values assigned
     else:
-        response_message = "Failed to fetch the internet speed."
+        response_message = "Failed to fetch the internet speed. Try Again !"
 
    
     await message.edit(response_message)
