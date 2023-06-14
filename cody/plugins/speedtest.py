@@ -8,7 +8,7 @@ import os
 @bot.on(events.NewMessage(incoming=True, pattern="/speedtest"))
 async def speedtest(event):
     chat = await event.get_chat()
-    message = await event.reply("Checking Your Internet Speed...Please Wait😊")
+    message = await event.reply("Checking Your Speed Test...Please Wait😊")
 
   #Command execution and retrieve the output as a string  
     response = os.popen('speedtest-cli --simple').read()
@@ -32,7 +32,7 @@ async def speedtest(event):
     if download_speed != None and upload_speed != None:      response_message = f"**Download speed:** {download_speed}\n**Upload speed:** {upload_speed}"
     #Speed values assigned
     else:
-        response_message = "Failed to fetch the internet speed. Try Again !"
+        response_message = "Failed to fetch the speed test result. Try Again !"
 
    
     await message.edit(response_message)
